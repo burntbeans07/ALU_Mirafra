@@ -163,7 +163,7 @@ reg [7:0] pass_cnt;
 reg [6:0] fail_cnt;
 
 task check_outputs;
-    input [63:0] tc;
+	input [9:0] tc;
     begin
         if(res!==exp_res || err!==exp_err || OFLOW!==exp_OFLOW ||
            cout!==exp_cout || G!==exp_G || L!==exp_L || E!==exp_E) begin
@@ -185,7 +185,7 @@ task apply_and_check;
     input [1:0]   iv;
     input         ci;
     input         is_mul;
-    input [63:0]  tc;
+	input [9:0]  tc;
     begin
         OPA=a; OPB=b; mode=m; cmd=c; input_valid=iv; cin=ci; CE=1;
         reference_model;
